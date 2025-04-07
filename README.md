@@ -96,5 +96,3 @@ Licensed under the [MIT License](./LICENSE)
 ## 🌟 Show Your Support!
 
 If you found this helpful, leave a ⭐ on the repo and connect with me on [LinkedIn](https://www.linkedin.com/in/ali-al-asif-73447328a/)! 😄
-
-```
