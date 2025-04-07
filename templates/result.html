@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOI Extraction Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">DOI Extraction Results</h1>
+
+        {% if main_doi_links %}
+            <h2 class="mt-3">DOI Links Found on Main Page:</h2>
+            <ul class="list-group mt-3">
+                {% for doi in main_doi_links %}
+                    <li class="list-group-item"><a href="{{ doi }}" target="_blank">{{ doi }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2 class="mt-3">No DOI Links Found on Main Page.</h2>
+        {% endif %}
+
+        {% if subpage_dois %}
+            <h2 class="mt-5">DOI Links Found on Subpages:</h2>
+            {% for link, dois in subpage_dois.items() %}
+                <h3><a href="{{ link }}" target="_blank">{{ link }}</a></h3>
+                <ul class="list-group mt-3">
+                    {% for doi in dois %}
+                        <li class="list-group-item"><a href="{{ doi }}" target="_blank">{{ doi }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        {% endif %}
+
+        {% if error_urls %}
+            <h2 class="mt-5">Errors Encountered:</h2>
+            <ul class="list-group mt-3">
+                {% for url, error in error_urls %}
+                    <li class="list-group-item">
+                        <strong><a href="{{ url }}" target="_blank">{{ url }}</a></strong>: {{ error }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+        <a href="/download/doi_results.docx" class="btn btn-success mt-3">Download Results as Word Document</a>
+        <h6>created by ALI AL ASIF</h6>
+    </div>
+
+</body>
+</html>
