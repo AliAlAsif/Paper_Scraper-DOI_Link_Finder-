@@ -1,102 +1,100 @@
 
+# 📄 Paper Scraper - DOI Link Finder
 
-```markdown
-# 📚 DOI Scraper Web App
-
-A Flask-based web application that extracts DOI links from any webpage (and its subpages if needed), then compiles the results into a downloadable Word document.
+A Flask-based web app that scrapes and extracts DOI links from research paper pages and their subpages. The extracted links are compiled into a downloadable Word document for your convenience.
 
 ---
 
 ## 🚀 Features
 
-- Extracts **DOI links** from a main webpage.
-- Automatically scans **subpages** if no DOIs are found.
-- Handles **403, 404**, and other HTTP errors gracefully.
-- Saves results in a **Word (.docx)** file.
-- Clean, simple interface with Flask and Bootstrap.
+- ✅ Extracts DOI links from the **main webpage**
+- 🔗 Follows subpage links and scrapes DOIs from them
+- 📃 Outputs results to a downloadable `.docx` Word file
+- ⚠️ Gracefully handles inaccessible or error-prone pages
+- 🧠 BeautifulSoup + Requests based parsing
+- 🌐 Simple and clean web interface using Flask templates
 
 ---
 
-## 🛠️ Tech Stack
-
-- Python 3.x
-- Flask
-- BeautifulSoup (bs4)
-- Requests
-- python-docx
-
----
-
-## 🖥️ How It Works
-
-1. Enter a URL on the main page.
-2. The app scans for `https://doi.org/...` links in the HTML content.
-3. If no DOIs are found, it recursively checks subpage links.
-4. All results are listed on the page and saved in a Word file.
-
-
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-📁 doi-scraper-webapp
-│
-├── app.py                  # Flask application code
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
-│
-├── templates/              # HTML files
-│   ├── index.html
-│   └── result.html
-│
-└── results/                # Word file output (auto-created)
+Paper_Scraper-DOI_Link_Finder-/
+├── templates/
+│   ├── index.html         # Homepage for URL input
+│   └── result.html        # Result display page with DOI links
+├── Paper scraper.py       # Flask backend script
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-## ✅ Getting Started
+## 💻 Run Locally
+
+### 1. Clone the Repo
 
 ```bash
-# Clone the repository
-git clone https://github.com/AliAlAsif/doi-scraper-webapp.git
-cd doi-scraper-webapp
-
-# Create virtual environment (optional)
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install required packages
-pip install -r requirements.txt
-
-# Run the app
-python app.py
+git clone https://github.com/AliAlAsif/Paper_Scraper-DOI_Link_Finder-.git
+cd Paper_Scraper-DOI_Link_Finder-
 ```
 
-Then open your browser at: `http://127.0.0.1:5000`
+### 2. (Optional) Create a Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate  # On Windows
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install flask beautifulsoup4 requests python-docx
+```
+
+### 4. Run the Web App
+
+```bash
+python "Paper scraper.py"
+```
+
+Then go to:  
+👉 `http://127.0.0.1:5000` in your browser
+
+---
+
+## 📥 Output
+
+All found DOI links (main page + subpages) and any errors are compiled into a Word file (`.docx`) and can be downloaded from the result page.
+
+---
+
+## 🛠️ Technologies Used
+
+- Python 3
+- Flask
+- BeautifulSoup (bs4)
+- requests
+- python-docx
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](./LICENSE)
 
 ---
 
 ## 👤 Author
 
-**ALI AL ASIF**  
-🔗 [GitHub](https://github.com/AliAlAsif)  
-🔗 [LinkedIn](https://www.linkedin.com/in/ali-al-asif-73447328a/)
+**Ali Al Asif**  
+📌 [GitHub](https://github.com/AliAlAsif)  
+📎 [LinkedIn](https://www.linkedin.com/in/ali-al-asif-73447328a/)
 
 ---
 
-## 🌍 Deploy It
+## 🌟 Show Your Support!
 
-You can deploy this app easily using:
-- 🔹 [PythonAnywhere](https://www.pythonanywhere.com/)
-- 🔹 [Render](https://render.com/)
-- 🔹 [Replit](https://replit.com/)
-- 🔹 [Heroku](https://www.heroku.com/) *(requires setup for `Procfile` and `requirements.txt`)*
+If you found this helpful, leave a ⭐ on the repo and connect with me on [LinkedIn](https://www.linkedin.com/in/ali-al-asif-73447328a/)! 😄
 
----
-
+```
